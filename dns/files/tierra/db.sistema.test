@@ -1,4 +1,5 @@
 $TTL 86400
+$ORIGIN sistema.test. 
 @   IN  SOA  tierra.sistema.test. master.sistema.test. (
         2025101601
         3600
