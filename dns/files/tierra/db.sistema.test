@@ -4,3 +4,9 @@
         1800        ; Retry
         604800      ; Expire
         7200 )      ; Negative Cache TTL (2 horas)
+
+
+ns1     IN  CNAME  tierra
+ns2     IN  CNAME  venus
+tierra  IN  A  192.168.57.103
+venus   IN  A  192.168.57.102

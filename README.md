@@ -62,3 +62,7 @@ Añadimos en el apartado options de named.conf.options del maestro (Tierra) el "
 8. Se configurarán los siguientes alias:
     a. ns1.sistema.test. será un alias de tierra.sistema.test.
     b. ns2.sistema.test. será un alias de venus.sistema.test..
+
+Añadimos los registros CAME con sus respectivos A
+
+![alias](dns/img/alias.png)     
