@@ -76,3 +76,7 @@ Añadimos los registros CAME con sus respectivos A
 sistema.test.
 
 ![mail](dns/img/mail.png) 
+
+
+Al final los ficheros db.sistema.test y db.192 se verian asi
+

@@ -1,17 +1,17 @@
+$TTL 86400
 @   IN  SOA  tierra.sistema.test. master.sistema.test. (
-        2025101601  ; Serial
-        3600        ; Refresh
-        1800        ; Retry
-        604800      ; Expire
-        7200 )      ; Negative Cache TTL (2 horas)
+        2025101601
+        3600
+        1800
+        604800
+        7200 )
 
-
+@       IN  NS  tierra.sistema.test.
+@       IN  NS  venus.sistema.test.
+@       IN  MX 10 mail.sistema.test.
+tierra  IN  A   192.168.57.103
+venus   IN  A   192.168.57.102
+marte   IN  A   192.168.57.104
 ns1     IN  CNAME  tierra
 ns2     IN  CNAME  venus
 mail    IN  CNAME  marte
-
-tierra  IN  A  192.168.57.103
-venus   IN  A  192.168.57.102
-marte   IN  A  192.168.57.104
-
-@   IN  MX 10 mail.sistema.test.
