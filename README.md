@@ -26,7 +26,7 @@ y en la red 192.168.57.0/24, para ello utilizarán la opción de listas de contr
 Para ello modificamos el named.conf.options y añadimos una lista acl con las redes permitidas para 
 realizar recursion
 
-![acl](dns/img/acl.png)
+![acl](dns/img/acl2.png)
 
 y añadimos en options: 
 
