@@ -20,3 +20,12 @@ volvemos a copiar en cada una de las maquinas en /etc/bind/
 
 3. Los servidores permitirán las consultas recursivas sólo a los ordenadores en la red 127.0.0.0/8
 y en la red 192.168.57.0/24, para ello utilizarán la opción de listas de control de acceso o acl.
+
+Para ello modificamos el named.conf.options y añadimos una lista acl con las redes permitidas para 
+realizar recursion
+
+![acl](dns/img/acl.png)
+
+y añadimos en options: 
+
+![allow](dns/img/allow.png)
