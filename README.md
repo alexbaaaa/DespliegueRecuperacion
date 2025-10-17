@@ -52,3 +52,11 @@ Creamos los archivos db.sistema.test y db.192 y añadimos los siguientes valores
 
 ![soaHoras](dns/img/soaHoras.png)
 
+7. Aquellas consultas que reciba el servidor para la que no está autorizado, deberá reenviarlas
+(forward) al servidor DNS 208.67.222.222 (OpenDNS).
+
+Añadimos en el apartado options de named.conf.options del maestro (Tierra) el "forwarders" 
+
+![forwarders](dns/img/forwarders.png)
+
+8. 
