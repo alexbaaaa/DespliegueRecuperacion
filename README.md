@@ -66,3 +66,13 @@ Añadimos en el apartado options de named.conf.options del maestro (Tierra) el "
 Añadimos los registros CAME con sus respectivos A
 
 ![alias](dns/img/alias.png)     
+
+
+9. mail.sistema.test. será un alias de marte.sistema.test.
+
+![aliasMX](dns/img/aliasMX.png) 
+
+10. El equipo marte.sistema.test. actuará como servidor de correo del dominio de correo
+sistema.test.
+
+![mail](dns/img/mail.png) 

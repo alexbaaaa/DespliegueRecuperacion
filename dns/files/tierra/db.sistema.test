@@ -8,5 +8,10 @@
 
 ns1     IN  CNAME  tierra
 ns2     IN  CNAME  venus
+mail    IN  CNAME  marte
+
 tierra  IN  A  192.168.57.103
 venus   IN  A  192.168.57.102
+marte   IN  A  192.168.57.104
+
+@   IN  MX 10 mail.sistema.test.
