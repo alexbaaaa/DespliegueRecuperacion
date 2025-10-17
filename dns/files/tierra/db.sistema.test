@@ -1,0 +1,6 @@
+@   IN  SOA  tierra.sistema.test. master.sistema.test. (
+        2025101601  ; Serial
+        3600        ; Refresh
+        1800        ; Retry
+        604800      ; Expire
+        7200 )      ; Negative Cache TTL (2 horas)

@@ -37,10 +37,18 @@ y añadimos en options:
 Para ello modificamos el named.conf.local para definir las zonas directas y inversas del maestro 
 y permitir la transferencia al esclavo (Venus)
 
-![localVenus](dns/img/localTierra.png)
+![localTierra](dns/img/localTierra.png)
 
 5. El servidor esclavo será venus.sistema.test y tendrá como maestro a tierra.sistema.test
 
 Definimos en el named.conf.local que venus sera esclavo de tierra
 
 ![localVenus](dns/img/localVenus.png)
+
+6. El tiempo en caché de las respuestas negativas de las zonas (directa e inversa) será de dos horas
+(se pone en segundos).
+
+Creamos los archivos db.sistema.test y db.192 y añadimos los siguientes valores en cada uno
+
+![soaHoras](dns/img/soaHoras.png)
+
