@@ -1,0 +1,9 @@
+zone "sistema.test" {
+  type master;
+  file "/var/lib/bind/db.aula.izv";
+};
+//zone "X.168.192.in-addr.arpa" {
+//  type master;
+//  file "/var/lib/bind/db.192.168.X";
+//};
+

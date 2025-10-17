@@ -1,2 +1,19 @@
 # DespliegueRecuperacion
 Repositorio para realizar las prácticas de Despliegue
+
+## Practica DNS
+
+1. Activa solamente la escucha del servidor para el protocolo IPv4
+
+Para ellos tenemos que modificar el archivo named en  /etc/default/named y añadir -4 
+Modificamos el named y lo copiamos en  /etc/default/ de cada maquina (venus y tierra)
+
+![namedVenus](img/named_Venus.png)
+![namedTierra](img/named_Tierra.png)
+
+2. Establecer la opción dnssec-validation a yes
+
+Para ello ralizamos los pasos anteriores pero con el archivo named.conf.options y lo
+volvemos a copiar en cada una de las maquinas en /etc/bind/
+
+![dnssec-validation](img/dnssec_validation.png)
