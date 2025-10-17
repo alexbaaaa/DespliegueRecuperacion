@@ -7,7 +7,7 @@ zone "sistema.test" {
 zone "57.168.192.in-addr.arpa" {
     type slave;
     masters { 192.168.57.103; };
-    file "/etc/bind/db.192";
+    file "/var/lib/bind/db.192";
 };
 
 

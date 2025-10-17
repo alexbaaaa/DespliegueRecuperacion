@@ -9,7 +9,7 @@ $ORIGIN sistema.test.
 
 @       IN  NS  tierra.sistema.test.
 @       IN  NS  venus.sistema.test.
-@       IN  MX 10 mail.sistema.test.
+@       IN  MX 10 marte.sistema.test.
 tierra  IN  A   192.168.57.103
 venus   IN  A   192.168.57.102
 marte   IN  A   192.168.57.104

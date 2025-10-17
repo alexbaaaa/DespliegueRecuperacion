@@ -1,5 +1,5 @@
 $TTL 86400
-$ORIGIN sistema.test. 
+$ORIGIN 57.168.192.in-addr.arpa.
 @   IN  SOA  tierra.sistema.test. master.sistema.test. (
         2025101601
         3600
