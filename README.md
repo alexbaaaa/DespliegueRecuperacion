@@ -59,4 +59,6 @@ Añadimos en el apartado options de named.conf.options del maestro (Tierra) el "
 
 ![forwarders](dns/img/forwarders.png)
 
-8. 
+8. Se configurarán los siguientes alias:
+    a. ns1.sistema.test. será un alias de tierra.sistema.test.
+    b. ns2.sistema.test. será un alias de venus.sistema.test..
