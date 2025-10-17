@@ -80,3 +80,27 @@ sistema.test.
 
 Al final los ficheros db.sistema.test y db.192 se verian asi
 
+### EN resumen
+
+ 1. Para tierra tendriamos los siguientes ficheros:
+
+    _named.conf.local_
+    ![local](dns/img/local_tierra.png) 
+
+    _named.conf.options_
+    ![options](dns/img/options_tierra.png) 
+
+    _db.sistema.test_
+    ![sitema.test](dns/img/db_sistema.png) 
+
+    _db.192_
+    ![192](dns/img/db192.png) 
+
+
+ 2. Para Venus tendriamos los siguientes ficheros:
+
+    _named.conf.local_
+    ![local](dns/img/local_venus.png) 
+
+    _named.conf.options_
+    ![opstions](dns/img/options_venus.png) 
