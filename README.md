@@ -17,3 +17,6 @@ Para ello ralizamos los pasos anteriores pero con el archivo named.conf.options 
 volvemos a copiar en cada una de las maquinas en /etc/bind/
 
 ![dnssec-validation](dns/img/dnssec_validation.png)
+
+3. Los servidores permitirán las consultas recursivas sólo a los ordenadores en la red 127.0.0.0/8
+y en la red 192.168.57.0/24, para ello utilizarán la opción de listas de control de acceso o acl.
