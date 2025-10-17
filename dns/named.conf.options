@@ -6,7 +6,7 @@ acl autorizados {
 options {
 	directory "/var/cache/bind";
 	allow-query { autorizados; };
-	allow-recursion { redes_permitidas; };
+	allow-recursion { autorizados; };
 	dnssec-validation yes;
 	listen-on-v6 { any; };
 };
