@@ -12,6 +12,8 @@ Vagrant.configure("2") do |config|
       apt-get -y install bind9 bind9-dnsutils
       rm /etc/default/named
       cp /vagrant/named /etc/default/
+      cp /vagrant/named.conf.options /etc/bind/
+      cp /vagrant/files/venus/named.conf.local /etc/bind/
     SHELL
   end
 
@@ -24,6 +26,8 @@ Vagrant.configure("2") do |config|
       apt-get -y install bind9 bind9-dnsutils
       rm /etc/default/named
       cp /vagrant/named /etc/default/
+      cp /vagrant/named.conf.options /etc/bind/
+      cp /vagrant/files/tierra/named.conf.local /etc/bind/
     SHELL
   end
 end

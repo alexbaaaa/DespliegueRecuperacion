@@ -1,13 +1,12 @@
 zone "sistema.test" {
-  type master;
+  type slave;
   file "/var/lib/bind/db.sitema.test";
-  allow-transfer { 192.168.57.102; }
 };
 
 zone "57.168.192.in-addr.arpa" {
-    type master;
+    type slave;
+    masters { 192.168.57.103; };
     file "/etc/bind/db.192";
-    allow-transfer { 192.168.57.102; };
 };
 
 

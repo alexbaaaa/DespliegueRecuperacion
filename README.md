@@ -3,6 +3,8 @@ Repositorio para realizar las prácticas de Despliegue
 
 ## Practica DNS
 
+### Preparacion de los servidores DNS
+
 1. Activa solamente la escucha del servidor para el protocolo IPv4
 
 Para ellos tenemos que modificar el archivo named en  /etc/default/named y añadir -4 
@@ -29,3 +31,14 @@ realizar recursion
 y añadimos en options: 
 
 ![allow](dns/img/allow.png)
+
+4. El servidor maestro será tierra.sistema.test y tendrá autoridad sobre la zona directa e inversa.
+
+Para ello modificamos el named.conf.local para definir las zonas directas y inversas del maestro 
+y permitir la transferencia al esclavo (Venus)
+
+![local](dns/img/localTierra.png)
+
+5. El servidor esclavo será venus.sistema.test y tendrá como maestro a tierra.sistema.test
+
+Definimos en el named.conf.local que venus sera esclavo de tierra
