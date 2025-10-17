@@ -57,7 +57,7 @@ Creamos los archivos db.sistema.test y db.192 y añadimos los siguientes valores
 
 Añadimos en el apartado options de named.conf.options del maestro (Tierra) el "forwarders" 
 
-![forwarders](dns/img/forwarders.png)
+![forwarders](dns/img/forwaders.png)
 
 8. Se configurarán los siguientes alias:
     a. ns1.sistema.test. será un alias de tierra.sistema.test.
@@ -88,19 +88,24 @@ Al final los ficheros db.sistema.test y db.192 se verian asi
     ![local](dns/img/local_tierra.png) 
 
     _named.conf.options_
+
     ![options](dns/img/options_tierra.png) 
 
     _db.sistema.test_
+
     ![sitema.test](dns/img/db_sistema.png) 
 
     _db.192_
+
     ![192](dns/img/db192.png) 
 
 
  2. Para Venus tendriamos los siguientes ficheros:
 
     _named.conf.local_
+
     ![local](dns/img/local_venus.png) 
 
     _named.conf.options_
+
     ![opstions](dns/img/options_venus.png) 
