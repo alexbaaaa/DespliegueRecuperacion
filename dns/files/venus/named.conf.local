@@ -1,5 +1,6 @@
 zone "sistema.test" {
   type slave;
+  masters { 192.168.57.103; };
   file "/var/lib/bind/db.sitema.test";
 };
 

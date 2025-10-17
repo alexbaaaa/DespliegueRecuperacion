@@ -37,8 +37,10 @@ y añadimos en options:
 Para ello modificamos el named.conf.local para definir las zonas directas y inversas del maestro 
 y permitir la transferencia al esclavo (Venus)
 
-![local](dns/img/localTierra.png)
+![localVenus](dns/img/localTierra.png)
 
 5. El servidor esclavo será venus.sistema.test y tendrá como maestro a tierra.sistema.test
 
 Definimos en el named.conf.local que venus sera esclavo de tierra
+
+![localVenus](dns/img/localVenus.png)
