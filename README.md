@@ -17,8 +17,10 @@ Ambos servidores tendrian los mismos archivos cambiando la sentencia listen-on c
 2. A continuaccion definimos las zonas directas y inversas en el named.conf.local tanto de *tierra* como de *venus*
 
 **Tierra**:
+
 ![localT](new_dns/img/localT.png)
 **Venus**:
+
 ![localV](new_dns/img/localV.png)
 
 3. Creamos los arvhivos de zona tanto directa (db.sistema.test) como inversa (db.198.168.57). Con todos los tipos de registros especificados en la practica.
