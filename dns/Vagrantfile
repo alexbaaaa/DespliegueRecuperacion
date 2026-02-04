@@ -14,6 +14,7 @@ Vagrant.configure("2") do |config|
       cp /vagrant/named /etc/default/
       cp /vagrant/files/venus/named.conf.options /etc/bind/
       cp /vagrant/files/venus/named.conf.local /etc/bind/
+      systemctl 
     SHELL
   end
 
