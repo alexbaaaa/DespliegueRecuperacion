@@ -1,0 +1,13 @@
+zone "sistema.test" {
+  type slave;
+  masters { 192.168.57.103; };
+  file "/var/lib/bind/db.sitema.test";
+};
+
+zone "57.168.192.in-addr.arpa" {
+    type slave;
+    masters { 192.168.57.103; };
+    file "/var/lib/bind/db.192.168.57";
+};
+
+

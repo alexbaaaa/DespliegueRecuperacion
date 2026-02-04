@@ -3,13 +3,23 @@ Repositorio para realizar las prácticas de Despliegue
 
 ## Practica DNS
 
-### Preparacion de los servidores DNS
+### Preparacion de los servidores DNS (new_dns)
 
-1- Modificamos el archivo named y named.conf.options para configurar el servicio bind9. Definiendo la escucha en IP4, la validación DNSSEC, las consultas reculsivas solo para los autorizados y el reenvío de consultas externas. 
+1. Modificamos el archivo named y named.conf.options para configurar el servicio bind9. Definiendo la escucha en IP4, la validación DNSSEC, las consultas reculsivas solo para los autorizados y el reenvío de consultas externas. 
 
 Ambos servidores tendrian los mismos archivos cambiando la sentencia listen-on con la ip correcta en el caso del named.conf.options ambos lo copiamos en su lugar y añadimos la sentencias al provision de cada servidor 
 
 
+![named](dns/img/)
+![options](dns/img/)
+
+
+2. A continuaccion definimos las zonas directas y inversas en el named.conf.local tanto de *tierra* como de *venus*
+
+**Tierra**:
+![localT](dns/img/)
+**Venus**:
+![localV](dns/img/)
 
 
 
