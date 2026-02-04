@@ -10,17 +10,22 @@ Repositorio para realizar las prácticas de Despliegue
 Ambos servidores tendrian los mismos archivos cambiando la sentencia listen-on con la ip correcta en el caso del named.conf.options ambos lo copiamos en su lugar y añadimos la sentencias al provision de cada servidor 
 
 
-![named](dns/img/)
-![options](dns/img/)
+![named](new_dns/img/named.png)
+![options](new_dns/img/options.png)
 
 
 2. A continuaccion definimos las zonas directas y inversas en el named.conf.local tanto de *tierra* como de *venus*
 
 **Tierra**:
-![localT](dns/img/)
+![localT](new_dns/img/localT.png)
 **Venus**:
-![localV](dns/img/)
+![localV](new_dns/img/localV.png)
 
+3. Creamos los arvhivos de zona tanto directa (db.sistema.test) como inversa (db.198.168.57). Con todos los tipos de registros especificados en la practica.
+
+
+![directa](new_dns/img/directa.png)
+![inversa](new_dns/img/inversa.png)
 
 
 ----------------------------------------------

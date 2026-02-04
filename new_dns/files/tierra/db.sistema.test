@@ -1,0 +1,18 @@
+$TTL 86400
+$ORIGIN sistema.test. 
+@   IN  SOA  tierra.sistema.test. master.sistema.test. (
+        2025101601
+        3600
+        1800
+        604800
+        7200 )
+
+@       IN  NS  tierra.sistema.test.
+@       IN  NS  venus.sistema.test.
+@       IN  MX 10 marte.sistema.test.
+tierra  IN  A   192.168.57.103
+venus   IN  A   192.168.57.102
+marte   IN  A   192.168.57.104
+ns1     IN  CNAME  tierra
+ns2     IN  CNAME  venus
+mail    IN  CNAME  marte

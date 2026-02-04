@@ -1,0 +1,15 @@
+$TTL 86400
+$ORIGIN 57.168.192.in-addr.arpa.
+@   IN  SOA  tierra.sistema.test. master.sistema.test. (
+        2025101601
+        3600
+        1800
+        604800
+        7200 )
+
+@       IN  NS  tierra.sistema.test.
+@       IN  NS  venus.sistema.test.
+
+103     IN  PTR  tierra.sistema.test.
+102     IN  PTR  venus.sistema.test.
+104     IN  PTR  marte.sistema.test.
