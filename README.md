@@ -5,6 +5,15 @@ Repositorio para realizar las prácticas de Despliegue
 
 ### Preparacion de los servidores DNS
 
+1- Modificamos el archivo named y named.conf.options para configurar el servicio bind9. Definiendo la escucha en IP4, la validación DNSSEC, las consultas reculsivas solo para los autorizados y el reenvío de consultas externas. 
+
+Ambos servidores tendrian los mismos archivos cambiando la sentencia listen-on con la ip correcta en el caso del named.conf.options ambos lo copiamos en su lugar y añadimos la sentencias al provision de cada servidor 
+
+
+
+
+
+----------------------------------------------
 1. Activa solamente la escucha del servidor para el protocolo IPv4
 
 Para ellos tenemos que modificar el archivo named en  /etc/default/named y añadir -4 

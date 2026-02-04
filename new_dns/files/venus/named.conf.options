@@ -1,0 +1,22 @@
+acl autorizados { 
+  127.0.0.0/8; 
+  192.168.57.0/24; 
+};
+
+options {
+	directory "/var/cache/bind";
+	
+	allow-query { autorizados; };
+	recursion yes;
+	allow-recursion { autorizados; };
+
+	dnssec-validation yes;
+
+	listen-on { 127.0.0.1; 192.168.57.102; };
+	listen-on-v6 { none; };
+	
+	forwarders {
+    	208.67.222.222; //OpenDNS
+	};
+};
+
