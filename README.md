@@ -3,7 +3,6 @@ Repositorio para realizar las prácticas de Despliegue
 
 ## Practica DNS
 
-### Preparacion de los servidores DNS (new_dns)
 
 1. Modificamos el archivo named y named.conf.options para configurar el servicio bind9. Definiendo la escucha en IP4, la validación DNSSEC, las consultas reculsivas solo para los autorizados y el reenvío de consultas externas. 
 
@@ -19,6 +18,8 @@ Ambos servidores tendrian los mismos archivos cambiando la sentencia listen-on c
 **Tierra**:
 
 ![localT](new_dns/img/localT.png)
+
+
 **Venus**:
 
 ![localV](new_dns/img/localV.png)
@@ -28,4 +29,17 @@ Ambos servidores tendrian los mismos archivos cambiando la sentencia listen-on c
 
 ![directa](new_dns/img/directa.png)
 ![inversa](new_dns/img/inversa.png)
+
+## Practica Nginx
+
+### Instalacion y configuracion de servidor web Nginex
+
+1. Preparamos el archivo Vagranfile con toda la configuración para empezar a configurar el servidor
+
+|[servidorBase](nginx/img/servidor_base.png)
+
+2. Arrancamos el servidor y procedemos a configurar nginx basica. Una vez realizada añadimos las sentencias al provisión.
+
+
+
 
