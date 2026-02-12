@@ -43,6 +43,19 @@ Ambos servidores tendrian los mismos archivos cambiando la sentencia listen-on c
 ![ngixBase](nginx/img/nginxBase.png)
 *nginx funcional*
 
+2. Creamos la siguiente estructura de directorios */var/www/nginx_web/html* donde alojaremos la web de ejemplo. Dandole los permisos pertinenetes. 
+Creamos un bloque de servidor para con los siguientes parametros en sites-avialable:
+
+![bloqueServer](nginx/img/bloqueServer.png)
+
+3. Creamos un enlace simbolico a sites-enabled y comprobamos que con la IP y con el nombre nos muestre la web: 
+
+![exampleWebIP](nginx/img/exampleWeb.png)
+*IP*
+
+![exampleWebNombre](nginx/img/webNginx.png)
+*we_nginx*
+
 
 
 
