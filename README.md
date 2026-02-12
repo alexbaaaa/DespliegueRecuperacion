@@ -34,11 +34,15 @@ Ambos servidores tendrian los mismos archivos cambiando la sentencia listen-on c
 
 ### Instalacion y configuracion de servidor web Nginex
 
-1. Preparamos el archivo Vagranfile con toda la configuración para empezar a configurar el servidor
+1. Preparamos el archivo Vagranfile base con nginx y vemos que el servicio funciona correctamente
+
 
 |[servidorBase](nginx/img/servidor_base.png)
+*vagranFile*
 
-2. Arrancamos el servidor y procedemos a configurar nginx basica. Una vez realizada añadimos las sentencias al provisión.
+|[ngixBase](nginx/img/nginxBase.png)
+*nginx funcional*
+
 
 
 
