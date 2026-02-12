@@ -37,10 +37,10 @@ Ambos servidores tendrian los mismos archivos cambiando la sentencia listen-on c
 1. Preparamos el archivo Vagranfile base con nginx y vemos que el servicio funciona correctamente
 
 
-|[servidorBase](nginx/img/servidor_base.png)
+![servidorBase](nginx/img/servidor_base.png)
 *vagranFile*
 
-|[ngixBase](nginx/img/nginxBase.png)
+![ngixBase](nginx/img/nginxBase.png)
 *nginx funcional*
 
 
