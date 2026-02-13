@@ -1,0 +1,11 @@
+server {
+	listen 80;
+	listen [::]:80;
+	root /var/www/web_nginx/html;
+	index example.html index.html index.htm;
+	server_name web_nginx 198.168.56.10;
+	location / {
+		try_files $uri $uri/ =404;
+	}
+
+}
