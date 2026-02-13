@@ -28,6 +28,25 @@ Vagrant.configure("2") do |config|
 
     cp /vagrant/files/vsftpd.conf /etc/vsftpd.conf
 
+    # Fin practica 2.1
+
+    install openssl
+
+    sh -c "echo -n 'Alejandro:' >> /etc/nginx/.htpasswd" 
+    sh -c "openssl passwd -apr1 '1234'>> /etc/nginx/.htpasswd" 
+
+    sh -c "echo -n 'Aguilera:' >> /etc/nginx/.htpasswd" 
+    sh -c "openssl passwd -apr1 '4321'>> /etc/nginx/.htpasswd" 
+
+    # Creacion de la nueva web
+
+    mkdir  /var/www/perfer/
+
+    cp -r /vagrant/files/html /var/www/perfer/
+    cp /vagrant/files/perfer /etc/nginx/sites-available/
+
+    ln -s /etc/nginx/sites-available/perfer /etc/nginx/sites-enabled/
+
     systemctl restart nginx
     systemctl restart vsftpd
   SHELL

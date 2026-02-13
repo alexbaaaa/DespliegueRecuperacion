@@ -34,7 +34,7 @@ ___
 
 # Practica Nginx
 
-### Instalacion y configuracion de servidor web Nginex
+## Instalacion y configuracion de servidor web Nginex
 
 1. Preparamos el archivo Vagranfile base con nginx y vemos que el servicio funciona correctamente
 
@@ -87,3 +87,69 @@ y añadiremos las siguientes lineas:
 ![add](nginx/img/add.png)
 
 7. Despues de reiniciamos el servicio y ya podemos trasferir arvhivos mediante un cliente ftp como firezilla.
+
+
+
+## Autentificacion en Nginx
+
+1. Insatalamos la herramienta openssl y pasamos a la configuración.
+
+*Creamos el archivo oculto (.htpasswd)*
+```bash
+sudo touch /etc/nginx/.htpasswd
+```
+*Generamos un usuario y contraseña*
+```bash
+sudo sh -c "echo -n 'Alejandro:' >> /etc/nginx/.htpasswd" 
+```
+```bash
+sudo sh -c "openssl passwd -apr1 '1234'>> /etc/nginx/.htpasswd" 
+```
+
+Repetimos el proceso con otro usuario: *Aguilera* y contraseña: *4321*
+
+![cifrado](nginx/img/cifrado.png)
+*contraseñas cifradas*
+
+2. Añadimos la la nueva web siguiendo los passos de la prectica anterior y comprovamos que funciona modificando el bloq server: 
+
+
+![bloqServer](nginx/img/server.png)
+*bloq server*
+
+3. Al aceder a la pagina mediante el nombre *perfer* nos indica que debemos autentificarnos.
+
+![autentificacion](nginx/img/auten.png)
+
+Una vez autenticados podemos acceder a la pagina sin ningun problema
+
+4. Accedemos con un usuario erroneo y otro correcto y vemos que se ve reflejado en los log:
+
+![error](nginx/img/errorAuten.png)
+
+![acces](nginx/img/accesAuten.png)
+
+5. Realizamos lo mismo pero solo para el contact.html y comprobamos que funciona
+
+
+![contactBloq](nginx/img/contactBloq.png)
+
+![contactAuten](nginx/img/contactAuten.png)
+
+6. Ahora combinaremos las autentificacion basica con la restriccion de acceso IP, modificando el location. En este caso denegamos el acceso a la 192.168.1.5 y permitmos el 192.168.56.1 del anfitrión. 
+
+![combinacion](nginx/img/combinacion.png.png)
+
+Lo comprobamos y vemos que dese nuestro anfitrion podemo acceder con ambos requisitos
+
+
+![comprobacion](nginx/img/comprobacion.png)
+
+
+Y Tambien le denegamos el acceso para que no pueda acceder con la IP del anfitrion en este caso nos muestra un forbiden (403).
+
+*error forbidden*
+![forbiden](nginx/img/forbiden.png)
+
+*error.log*
+![errorForbiden](nginx/img/error.png)
