@@ -1,9 +1,15 @@
 	server {
 		listen 80;
 		listen [::]:80;
+		listen 443 ssl;
 		root /var/www/perfer/html;
 		index index.html index.htm;
 		server_name perfer www.perfer.com 198.168.56.10;
+		ssl_certificate /etc/ssl/certs/perfer.com.crt;
+  		ssl_certificate_key /etc/ssl/private/perfer.com.key;
+  		ssl_protocols TLSv1 TLSv1.1 TLSv1.2 TLSv1.3;
+  		ssl_ciphers HIGH:!aNULL:!MD5;
+
 		location / {
 			satisfy all;
 

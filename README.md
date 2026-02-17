@@ -179,10 +179,46 @@ Utilizando los siguientes comandos:
 
 Comprobamos que esta tod funcionando correctamente y activaremos el cortafuegos con: 
 
-![statusUfw]](nginx/img/statusUfw.png)
+![statusUfw](nginx/img/statusUfw.png)
 
 ```bash
     sudo ufw --force enable
 ```
 
-4. 
+4. Con todo preprarado correctamente procedemos a general el certificado autofirmado.
+
+Primero generamos el certificado con el siguiente comando *openssl*:  
+
+```bash
+    sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/private/perfer.com.key -out /etc/ssl/certs/perfer.com.crt
+```
+5. Configuramos el Nginx para funcionar con el certificado ssl, añadiendo las directivas ssl, comprobamos la sintaxis y reiniciamos el nginx. 
+
+![directivas](nginx/img/directivas.png)
+
+Seguido comprobamos que la web funciona con el certificado ssl:
+
+![webFinal](nginx/img/webFinal.png)
+
+En este caso vemos que el certificado funciona aunque nos muestre el *'no es seguro'*, esto ocurre por que es un certificado autofirmado y el cliente, en este caso chrome, no confia en el origen de este.
+
+Para asegurarnos que Nginx esta escuchando por el 443 y esta sirviendo la paguina cifrada pordemos realizar los siguientes comandos: 
+
+```bash
+    sudo ss -tlnp | grep 443
+```
+
+El cual muestra: 
+
+![comprobacionSSL](nginx/img/comprobacionSSL.png)
+
+
+o utilizar tambien: 
+
+```bash
+    openssl s_client -connect perfer.com:443
+
+```
+Este nos muestra datos del certificado por tanto lo hemos realizado correctamente: 
+
+![comprobacionSSL2](nginx/img/comprobacionSSL2.png)
