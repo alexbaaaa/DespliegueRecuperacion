@@ -47,6 +47,16 @@ Vagrant.configure("2") do |config|
 
     ln -s /etc/nginx/sites-available/perfer /etc/nginx/sites-enabled/
 
+    # FIn practica 2.2
+
+    apt-get install ufw
+
+    ufw allow ssh
+    ufw allow 'Nginx Full'
+    ufw delete allow 'Nginx HTTP'
+
+    ufw --force enable
+
     systemctl restart nginx
     systemctl restart vsftpd
   SHELL
