@@ -34,7 +34,7 @@ ___
 
 # Practica Nginx
 
-## Instalacion y configuracion de servidor web Nginex
+## Instalacion y configuracion de servidor web Nginex (2.1)
 
 1. Preparamos el archivo Vagranfile base con nginx y vemos que el servicio funciona correctamente
 
@@ -90,7 +90,7 @@ y añadiremos las siguientes lineas:
 
 
 
-## Autentificacion en Nginx
+## Autentificacion en Nginx (2.2)
 
 1. Insatalamos la herramienta openssl y pasamos a la configuración.
 
@@ -153,3 +153,36 @@ Y Tambien le denegamos el acceso para que no pueda acceder con la IP del anfitri
 
 *error.log*
 ![errorForbiden](nginx/img/error.png)
+
+## Acceso seguro con Nginx (2.3)
+
+1. Para esta practica vamos a definir en el *hosts* los registros A de *perfer* y *www.perfer.com* apuntando a la IP del servidor (*192.168.56.10*). 
+
+![hostsSSL](nginx/img/hostsSSL.png)
+
+2. Pasamos a la comfigurazion del nginx añadiendo al *server_name* los dos nombres de dominio.
+
+![dominios](nginx/img/dominios.png)
+
+3. Configuramos el cortafuegos instalando el *ufw*, activamos el perfir para el trafico HTTPS, la conexión ssh y borramos las reglas de HTTP para evitar la duplicación. 
+
+Utilizando los siguientes comandos: 
+
+```bash
+    sudo apt install ufw
+```
+```bash
+    sudo ufw allow ssh
+    sudo ufw allow 'Nginx Full'
+    sudo ufw delete allow 'HTTP'
+```
+
+Comprobamos que esta tod funcionando correctamente y activaremos el cortafuegos con: 
+
+![statusUfw]](nginx/img/statusUfw.png)
+
+```bash
+    sudo ufw --force enable
+```
+
+4. 

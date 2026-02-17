@@ -3,12 +3,12 @@
 		listen [::]:80;
 		root /var/www/perfer/html;
 		index index.html index.htm;
-		server_name perfer 198.168.56.10;
+		server_name perfer www.perfer.com 198.168.56.10;
 		location / {
 			satisfy all;
 
 			deny 192.168.1.5;
-			allow 192.168.1.1/24;
+			allow 192.168.56.1/24;
 			allow 127.0.0.1;
 			deny all;
 
