@@ -138,7 +138,7 @@ Una vez autenticados podemos acceder a la pagina sin ningun problema
 
 6. Ahora combinaremos las autentificacion basica con la restriccion de acceso IP, modificando el location. En este caso denegamos el acceso a la 192.168.1.5 y permitmos el 192.168.56.1 del anfitrión. 
 
-![combinacion](nginx/img/combinacion.png.png)
+![combinacion](nginx/img/combinacion.png)
 
 Lo comprobamos y vemos que dese nuestro anfitrion podemo acceder con ambos requisitos
 
