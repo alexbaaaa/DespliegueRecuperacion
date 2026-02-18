@@ -10,13 +10,23 @@ Vagrant.configure("2") do |config|
   config.vm.provision "shell", inline: <<-SHELL
     apt-get update
 
-    # INstalacion JDK y Tomcat9
+    # INstalacion JDK y Tomcat9 con el paquete admin
     apt-get install -y openjdk-11-jdk
     apt-get install -y tomcat9
+    apt-get install -y tomcat9-admin
+
 
     # Creacción del grupo y usuarios para Tomcat9
     groupadd tomcat9
     useradd -s /bin/false -g tomcat9 -d /etc/tomcat9 tomcat9
+
+    # Permitir el acceso remoto a Tomcat9 
+    cp /vagrant/files/context.xml /usr/share/tomcat9-admin/host-manager/META-INF/
+
+    # Creamos el ususario alumno y le asignamos los roles
+    cp /vagrant/files/tomcat-users.xml /etc/tomcat9/
+
+    systemctl restart tomcat9
 
   SHELL
 end

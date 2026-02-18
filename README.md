@@ -236,5 +236,17 @@ Este nos muestra datos del certificado por tanto lo hemos realizado correctament
 AL acceder al *Http://Localhost:8080*
 ![itwork](appWeb/img/itworks.png)
 
-2.
+**1.2** Para el acceso remoto devemos modificar el context.xml. En el cado de que no exista el directorio Tomcat9-admin debemmos instalar el paquete *tomcat9-admin*. Lo instalamos y modificamos el context.xml.
+
+2. Creamos el ususario alumno modificando el fichero *tomcat-users.xml* y le damos los roles de admin y manager
+
+![alumno](appWeb/img/alumno.png)
+
+3. Comprobamos que podemos acceder a *http://localhost:8080/manager/html* y a *http://localhost:8080/host-manager/html* con la contraseña que hemos declarado en el paso antrior.  
+
+![manager](appWeb/img/manager.png)
+*manager*
+
+![hostmanager](appWeb/img/hostmanager.png)
+*hos-manager*
 
