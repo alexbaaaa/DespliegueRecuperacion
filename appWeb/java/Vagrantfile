@@ -1,0 +1,22 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+Vagrant.configure("2") do |config|
+
+  config.vm.box = "debian/bullseye64"
+  config.vm.network "forwarded_port", guest: 8080, host: 8080
+  config.vm.hostname = "java"
+  config.vm.synced_folder ".", "/vagrant", type: "virtualbox"
+
+  config.vm.provision "shell", inline: <<-SHELL
+    apt-get update
+
+    # INstalacion JDK y Tomcat9
+    apt-get install -y openjdk-11-jdk
+    apt-get install -y tomcat9
+
+    # Creacción del grupo y usuarios para Tomcat9
+    groupadd tomcat9
+    useradd -s /bin/false -g tomcat9 -d /etc/tomcat9 tomcat9
+
+  SHELL
+end

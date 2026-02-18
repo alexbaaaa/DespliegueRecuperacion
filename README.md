@@ -222,3 +222,19 @@ o utilizar tambien:
 Este nos muestra datos del certificado por tanto lo hemos realizado correctamente: 
 
 ![comprobacionSSL2](nginx/img/comprobacionSSL2.png)
+
+
+# Servidor de aplicaciones web 
+
+## Despliegue con Tomcat y Maven para Java
+
+1. Vamos a comenzar con la instalación de Tomcat 9 y el JDK para preparar la maquina. A parte crearemos un grupo para Tomcat y un usuario para el servicio. Iniacmos el Tomcat y vemos que funciona correcatemente.
+
+
+![tomcat](appWeb/img/tomcat.png)
+
+AL acceder al *Http://Localhost:8080*
+![itwork](appWeb/img/itworks.png)
+
+2.
+
