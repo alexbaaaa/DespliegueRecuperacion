@@ -292,6 +292,10 @@ Comprobamos que se ha generado correctamente:
 ![despliege](appWeb/img/despliege.png)
 
 
+10. Ahora vamos a repetir la practica con una aplicacion diferente. Primero clonamos el repositorio y nos colocamos en la rama correcta. 
+
+11. Segido vamos a añadir el plugin de tomcat7 para que nuestra aplicacion se despliege con este. Los pasos son iguales solo tenemos que añadir un nuevo bloque plugin con lo siguiente: 
+
 
 
 

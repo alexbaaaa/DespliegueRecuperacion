@@ -33,6 +33,9 @@ Vagrant.configure("2") do |config|
     # Generamos la aplicacion maven
     mvn archetype:generate -DgroupId=org.zaidinvergeles -DartifactId=tomcat-war -DarchetypeArtifactId=maven-archetype-webapp -DinteractiveMode=false
 
+    # Modificamos y copiamos el pom.xml
+    cp /vagrant/files /tomcat-war
+
     systemctl restart tomcat9
 
   SHELL
