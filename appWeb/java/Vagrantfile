@@ -10,10 +10,11 @@ Vagrant.configure("2") do |config|
   config.vm.provision "shell", inline: <<-SHELL
     apt-get update
 
-    # INstalacion JDK y Tomcat9 con el paquete admin
+    # INstalacion JDK, Tomcat9 con el paquete admin y el maven
     apt-get install -y openjdk-11-jdk
     apt-get install -y tomcat9
     apt-get install -y tomcat9-admin
+    apt-get install -y maven
 
 
     # Creacción del grupo y usuarios para Tomcat9
@@ -25,6 +26,12 @@ Vagrant.configure("2") do |config|
 
     # Creamos el ususario alumno y le asignamos los roles
     cp /vagrant/files/tomcat-users.xml /etc/tomcat9/
+
+    # Modificamos el settings.xml y lo copiamos
+    cp /vagrant/files/settings.xml /etc/maven/
+
+    # Generamos la aplicacion maven
+    mvn archetype:generate -DgroupId=org.zaidinvergeles -DartifactId=tomcat-war -DarchetypeArtifactId=maven-archetype-webapp -DinteractiveMode=false
 
     systemctl restart tomcat9
 

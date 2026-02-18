@@ -268,7 +268,30 @@ Con esto ya tendriamos desplegada la aplicación web con tomcat9 y de forma manu
 
 6. Modificamos el *tomcat-user.xml* añadiendo un nuevo rol *manager-script* para que maven se autentique frente a tomcat. En este caso creamo un nuevo ususario llamado *deploy* y le añadimos el nuevo rol. por temas de seguridad no podemos asignar todos los roles al mismo ususario. Por tanto tendremos dos ususarios el ususario *alumno* y el *deploy*
 
-![deployuser](appWeb/img/deployusere.png)
+![deployuser](appWeb/img/deployuser.png)
+
+7. Ahora tenemos que modificar el archivo *settings.xml* para indicarle a maven un indentificador. Con el usuario y contraseña definidos en el *tomcat-user.xml*.
+
+![settings](appWeb/img/settings.png)
+
+8. Nos colocamos en el directorio personal y desplegamos una aplicacíon de prueba con el siguiente comando:
+
+
+```bash
+    mvn archetype:generate -DgroupId=org.zaidinvergeles -DartifactId=tomcat-war -DarchetypeArtifactId=maven-archetype-webapp -DinteractiveMode=false
+```
+
+Comprobamos que se ha generado correctamente:
+
+
+![success](appWeb/img/sucess.png)
+
+
+9. Ahora modificaremos el archivo *pom.xml* para que haga el despliego con el plugin de maven para tomcat9 y desplegaremos la aplicacion. Y Comprobamos que funciona.
+
+![despliege](appWeb/img/despliege.png)
+
+
 
 
 
