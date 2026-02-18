@@ -223,10 +223,14 @@ Este nos muestra datos del certificado por tanto lo hemos realizado correctament
 
 ![comprobacionSSL2](nginx/img/comprobacionSSL2.png)
 
+___
+
 
 # Servidor de aplicaciones web 
 
 ## Despliegue con Tomcat y Maven para Java
+
+### Tomcat9
 
 1. Vamos a comenzar con la instalación de Tomcat 9 y el JDK para preparar la maquina. A parte crearemos un grupo para Tomcat y un usuario para el servicio. Iniacmos el Tomcat y vemos que funciona correcatemente.
 
@@ -249,4 +253,25 @@ AL acceder al *Http://Localhost:8080*
 
 ![hostmanager](appWeb/img/hostmanager.png)
 *hos-manager*
+
+4. Seguimos realizando el despliegle manual de la aplicacion con el archivo *tomcat1.war* y comprobamos el despliegue.
+
+
+![war](appWeb/img/war.png)
+
+
+Con esto ya tendriamos desplegada la aplicación web con tomcat9 y de forma manual. 
+
+5. Ahora continuaremos con el despliege de la aplicacion con Maven. Para ello lo instalamos y comprobamos que todo va bien.
+
+![maven](appWeb/img/maven.png)
+
+6. Modificamos el *tomcat-user.xml* añadiendo un nuevo rol *manager-script* para que maven se autentique frente a tomcat. En este caso creamo un nuevo ususario llamado *deploy* y le añadimos el nuevo rol. por temas de seguridad no podemos asignar todos los roles al mismo ususario. Por tanto tendremos dos ususarios el ususario *alumno* y el *deploy*
+
+![deployuser](appWeb/img/deployusere.png)
+
+
+
+
+
 
