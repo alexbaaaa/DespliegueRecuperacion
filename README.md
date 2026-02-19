@@ -294,10 +294,15 @@ Comprobamos que se ha generado correctamente:
 
 10. Ahora vamos a repetir la practica con una aplicacion diferente. Primero clonamos el repositorio y nos colocamos en la rama correcta. 
 
-11. Segido vamos a añadir el plugin de tomcat7 para que nuestra aplicacion se despliege con este. Los pasos son iguales solo tenemos que añadir un nuevo bloque plugin con lo siguiente: 
+11. Segido vamos a añadir el plugin de tomcat7 para que nuestra aplicacion se despliege con este. Los pasos son iguales solo tenemos que añadir un nuevo bloque plugin manteniendo el *groupId, la *url* y el nombre del server ya que seguimos con la misma configuración que el apartado anterior. Lo unico que cambiamos es el *path* al nombre que nosotros elijamos. 
+
+![pom](appWeb/img/pomRPS.png)
 
 
+12. Seguido desplegamos la aplicación mediante comandos y comprobamos que esta funcionando correctamente.
 
+
+![sucess](appWeb/img/success.png)
 
 
 
