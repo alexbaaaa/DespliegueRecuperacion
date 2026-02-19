@@ -351,6 +351,8 @@ Avisamos a systemd que existe un nuevo servicio lo arrancamos y vemos si todo fu
 Lo copiamos en sites-aviables, realizamos el enlace simbolico a sites-enables. reiniciamos nginx comprobando que no tiene errores. Modificamos el archivo host para "falsear" la resolucion de nombre y accedemos a la web. Comprobando que esta funciona correctamente.
 
 
+![final](appWeb/python/img/final.png)
+
 
 
 
