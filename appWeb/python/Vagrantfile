@@ -1,0 +1,39 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+Vagrant.configure("2") do |config|
+  config.vm.box = "debian/bullseye64"
+  config.vm.synced_folder ".", "/vagrant", type: "virtualbox"
+  config.vm.network "forwarded_port", guest: 5000, host: 5000
+
+  # ROOT
+  config.vm.provision "shell", inline: <<-SHELL
+    apt-get update
+
+    # Prerequisitos 
+    apt-get install -y nginx
+    apt-get install -y python3-pip
+
+    # Creamos el directorio de la APP
+    mkdir -p /var/www/app
+
+    #asignamos permisos al directorio
+    chown -R $USER:www-data /var/www/app
+    chmod -R 775 /var/www/app
+
+    cp /vagrant/files/.env /var/www/app
+  SHELL
+
+  # VAGRANT
+  config.vm.provision "shell", privileged: false, inline: <<-SHELL
+    # Paquetes de Python
+    pip3 install pipenv
+    pip3 install python-dotenv
+
+    # Inicimos el entorno
+    cd /var/www/app
+    pipenv shell
+
+    # Instalamos los paquetes necesarios
+    pipenv install flask gunicorn
+  SHELL
+end

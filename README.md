@@ -262,6 +262,8 @@ AL acceder al *Http://Localhost:8080*
 
 Con esto ya tendriamos desplegada la aplicación web con tomcat9 y de forma manual. 
 
+### Maven
+
 5. Ahora continuaremos con el despliege de la aplicacion con Maven. Para ello lo instalamos y comprobamos que todo va bien.
 
 ![maven](appWeb/img/maven.png)
@@ -292,9 +294,10 @@ Comprobamos que se ha generado correctamente:
 ![despliege](appWeb/img/despliege.png)
 
 
+
 10. Ahora vamos a repetir la practica con una aplicacion diferente. Primero clonamos el repositorio y nos colocamos en la rama correcta. 
 
-11. Segido vamos a añadir el plugin de tomcat7 para que nuestra aplicacion se despliege con este. Los pasos son iguales solo tenemos que añadir un nuevo bloque plugin manteniendo el *groupId, la *url* y el nombre del server ya que seguimos con la misma configuración que el apartado anterior. Lo unico que cambiamos es el *path* al nombre que nosotros elijamos. 
+11. Seguido vamos a añadir el plugin de tomcat7 para que nuestra aplicacion se despliege con este. Los pasos son iguales solo tenemos que añadir un nuevo bloque plugin manteniendo el *groupId, la *url* y el nombre del server ya que seguimos con la misma configuración que el apartado anterior. Lo unico que cambiamos es el *path* al nombre que nosotros elijamos. 
 
 ![pom](appWeb/img/pomRPS.png)
 
@@ -303,6 +306,51 @@ Comprobamos que se ha generado correctamente:
 
 
 ![sucess](appWeb/img/success.png)
+
+___
+
+## Python, flask y Gurnicon
+
+**1.** Preparamos la maquina instalando los paquetes necesarios teniendo en cuenta que hay paquetes que se deben instalar como administrador y otros con el usuario de vagrant. Instalamos los paquetes de Python necesarios para la practica y creamos un directorio en */var/www/app*, dandole los permisos pertinentes.
+
+**2.** Creamos un fichero .env y añadiendo las variables de entorno necesario.
+
+![env](appWeb/python/img/env.png)
+
+**3.** Iniciamos el entorno virtual el cual cargara la variables de entorno del .env
+
+
+![app](appWeb/python/img/app.png)
+
+**4.** Dentro del entorno instalamos los paquetes necesrios y creamos los ficheros *application.py* y *wsgi.py*.Arrancamos la aplicacion a modo de prueba con flask y vemos si funciona.
+
+![flask](appWeb/python/img/appFlask.png)
+*PoC con flask*
+
+Comprobamos tambien con gunicorn
+
+![gunicorn](appWeb/python/img/appGunicorn.png)
+*PoC con Gunicorn*
+
+**5.** Nos guardamos la direccion de gunicorn, ya que lo utilizaremos más adelante. en este caso seria: **/home/vagrant/.local/share/virtualenvs/app-1lvW3LzD/bin/gunicorn** 
+
+**6.** Nos salimos del entorno y comprobamos que tenemos nginx activo y corriendo.
+
+**7.** Crearemos un fichero (flask_app.service) para que nuestro sistema interprete a Gunicorn como un servicio más. Lo creamos en la siguiente dirección */etc/systemd/system/flask_app.service*. Modificando los valores a nuestro caso. 
+
+Avisamos a systemd que existe un nuevo servicio lo arrancamos y vemos si todo funciona correctamente.
+
+![flask_app](appWeb/python/img/flask_app.png)
+
+
+**8.** Habilitamos nuestra app configurando nginx creando un bloq server con los siguientes parametros: 
+
+
+![nginx_conf](appWeb/python/img/nginx_conf.png)
+
+Lo copiamos en sites-aviables, realizamos el enlace simbolico a sites-enables. reiniciamos nginx comprobando que no tiene errores. Modificamos el archivo host para "falsear" la resolucion de nombre y accedemos a la web. Comprobando que esta funciona correctamente.
+
+
 
 
 
